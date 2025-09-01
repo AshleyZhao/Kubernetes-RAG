@@ -17,4 +17,6 @@ promptflow-tools
 tiktoken==0.5.1
 tokenizers==0.14.1
 langchain
+langgraph
+kubernetes
 python-dotenv
