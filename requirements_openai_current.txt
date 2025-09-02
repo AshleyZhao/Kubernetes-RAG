@@ -20,3 +20,4 @@ langchain
 langgraph
 kubernetes
 python-dotenv
+semantic-kernel

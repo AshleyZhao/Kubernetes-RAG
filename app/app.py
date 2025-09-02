@@ -5,6 +5,9 @@ from azure.ai.projects import AIProjectClient
 from azure.identity import DefaultAzureCredential
 from azure.ai.agents.models import ListSortOrder
 import uuid
+import sys
+import os
+from kubernetes_tools import list_kubernetes_pods, restart_all_pods
 
 from dotenv import load_dotenv
 import os
@@ -20,6 +23,14 @@ CORS(app)
 project = AIProjectClient(
     credential=DefaultAzureCredential(),
     endpoint=ai_foundry_endpoint)
+
+# Update the op_agent with tools
+op_agent_id = os.getenv("OP_AGENT_ID")
+op_agent = project.agents.get_agent(op_agent_id)
+
+op_agent.tools = [list_kubernetes_pods, restart_all_pods]
+op_agent.update(op_agent)
+op_agent = project.agents.get_agent(op_agent_id)
 
 # Get the agent from your project
 agent = project.agents.get_agent(ai_agent_id)
