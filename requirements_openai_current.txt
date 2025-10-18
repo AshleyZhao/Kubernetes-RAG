@@ -21,3 +21,8 @@ langgraph
 kubernetes
 python-dotenv
 semantic-kernel
+flask
+flask-cors
+kubernetes
+azure-ai-projects
+dotenv
