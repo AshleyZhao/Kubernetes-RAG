@@ -2,7 +2,7 @@
 
 - GitHub
 - Python (Versions less than 3.14)
-- Azure account with Blob Storage, 
+- Azure account with Blob Storage, 3 AI Agents set up
 
 # Instructions
 
@@ -10,8 +10,9 @@
 2. Run `pip install -r requirements_openai_current.txt`.
 3. Go to the .env file and update your credentials.
 4. Download the Kubernetes documentation
-5. From `notebooks`, update the `integrated_vectorization_of_kubernetes_documentation.ipynb` notebook with the file path to your K. docs.
-6. From `app`, run `python app.py`.
+5. Run `az login`
+6. From `notebooks`, update the `integrated_vectorization_of_kubernetes_documentation.ipynb` notebook with the file path to your K. docs.
+7. From `app`, run `python app.py`.
    a. If at anytime you run into a module not found error, run `pip install <module>`. 
    The requirements.txt might contain versions of modules that are outdated.
 8. To begin testing the chatbot, start index.html
